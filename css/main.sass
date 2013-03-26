@@ -60,7 +60,30 @@ header
       display: block
       font-weight: 800
       
+@media (min-width: 768px) and (max-width: 979px)
+  header
+    h1#position-name
+      font-size: 60px
+      line-height: 50px
+      
+@media (max-width: 767px)
+  header
+    h1#position-name
+      font-size: 60px
+      line-height: 50px
+      padding: 0 20px
+            
+@media (max-width: 480px)
+  header
+    h1#position-name
+      font-size: 50px
+      line-height: 45px
+      padding: 0 20px
+      
 #main
+  
+  padding-bottom: 20px
+  
   .apply-now, .contact-us
     display: inline-block
     line-height: $apply_height
@@ -83,5 +106,6 @@ header
       
   p.position-summary
     border-bottom: 1px solid #ccc
-    margin: 20px auto
+    margin: 20px 0
     padding: 20px 0
+    
