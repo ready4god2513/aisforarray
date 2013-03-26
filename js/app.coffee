@@ -1,1 +1,1 @@
-@app = angular.module "careers", []
+@app = angular.module "careers", ["ngSanitize"]

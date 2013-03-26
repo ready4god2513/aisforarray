@@ -5341,3 +5341,69 @@ button.close {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important; } }
+a {
+  cursor: pointer; }
+
+header {
+  background-position: top center;
+  height: 500px;
+  position: relative; }
+  header div#sidebar-nav {
+    background: rgba(0, 0, 0, 0.6);
+    height: 500px; }
+    header div#sidebar-nav ul {
+      border: 1px solid #333333;
+      border-left: none;
+      border-right: none; }
+      header div#sidebar-nav ul:last-child {
+        border-top: none;
+        padding-top: 0; }
+    header div#sidebar-nav p {
+      color: #cccccc;
+      font-weight: 400; }
+    header div#sidebar-nav img {
+      margin-bottom: 40px; }
+    header div#sidebar-nav p, header div#sidebar-nav ul, header div#sidebar-nav img {
+      font-size: 18px;
+      margin: 0 25px;
+      padding: 15px 0; }
+      header div#sidebar-nav p li, header div#sidebar-nav ul li, header div#sidebar-nav img li {
+        list-style: none;
+        margin: 0;
+        padding: 5px 0; }
+        header div#sidebar-nav p li a, header div#sidebar-nav ul li a, header div#sidebar-nav img li a {
+          color: #999999;
+          font-weight: 300; }
+          header div#sidebar-nav p li a.active, header div#sidebar-nav ul li a.active, header div#sidebar-nav img li a.active {
+            color: #de3a3e; }
+  header h1#position-name {
+    bottom: 10px;
+    color: white;
+    font-size: 98px;
+    font-weight: 200;
+    line-height: 90px;
+    position: absolute;
+    text-transform: uppercase; }
+    header h1#position-name .single-word:last-child {
+      display: block;
+      font-weight: 800; }
+
+#main .apply-now, #main .contact-us {
+  display: inline-block;
+  line-height: 65px; }
+  #main .apply-now a, #main .contact-us a {
+    vertical-align: center; }
+#main .contact-us {
+  background: #e8e8e8; }
+  #main .contact-us a {
+    padding: 0 0 0 20px; }
+#main .apply-now a {
+  background: #d4d4d4;
+  color: white;
+  font-weight: 400;
+  padding: 10px 40px;
+  text-transform: uppercase; }
+#main p.position-summary {
+  border-bottom: 1px solid #cccccc;
+  margin: 20px auto;
+  padding: 20px 0; }

@@ -1,1 +1,87 @@
 @import "bootstrap"
+$header_height: 500px
+$apply_height: 65px
+
+a
+  cursor:  pointer
+  
+header
+  background-position: top center
+  height: $header_height
+  position: relative
+  
+  div#sidebar-nav
+    background: rgba(0, 0, 0, 0.6)
+    height: $header_height
+    
+    ul
+      border: 1px solid #333
+      border-left: none
+      border-right: none
+      
+      &:last-child
+        border-top: none
+        padding-top: 0
+    
+    p
+      color: #ccc
+      font-weight: 400
+      
+    img
+      margin-bottom: 40px
+      
+    p, ul, img
+      font-size: 18px
+      margin: 0 25px
+      padding: 15px 0
+      
+      li
+        list-style: none
+        margin: 0
+        padding: 5px 0
+        
+        a
+          color: #999999
+          font-weight: 300
+          
+          &.active
+            color: #de3a3e
+    
+  h1#position-name
+    bottom: 10px
+    color: #fff
+    font-size: 98px
+    font-weight: 200
+    line-height: 90px
+    position: absolute
+    text-transform: uppercase
+    
+    .single-word:last-child
+      display: block
+      font-weight: 800
+      
+#main
+  .apply-now, .contact-us
+    display: inline-block
+    line-height: $apply_height
+  
+    a
+      vertical-align: center
+      
+  .contact-us
+    background: #e8e8e8
+    a
+      padding: 0 0 0 20px
+      
+  .apply-now
+    a
+      background: #d4d4d4
+      color: #fff
+      font-weight: 400
+      padding: 10px 40px
+      text-transform: uppercase
+      
+  p.position-summary
+    border-bottom: 1px solid #ccc
+    margin: 20px auto
+    padding: 20px 0

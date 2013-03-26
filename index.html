@@ -15,67 +15,75 @@
 
         <div ng-controller="CareersCtrl">
 
-          <div class="row-fluid">
-            <header>
-              <div class="span3">
-                <nav id="about-bethel-media">
-                  <ul>
-                    <li><a href="#">Who is Bethel Media</a></li>
-                  </ul>
-                </nav>
-                <nav>
-                  <p><strong>Now Hiring</strong></p>
-                  <ul>
-                    <li ng-repeat="position in staff.openings">
-                      <a ng-click="renderPosition(position)">{{ position.name }}</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div id="banner">
-                <h1>{{ position.name }}</h1>
-              </div>
-            </header>
-          </div>
+          <header style="background-image:url({{ position.image }})">
+            <div class="row-fluid">
 
+              <div class="span3">
+                <div id="sidebar-nav">
+                  <img src="img/bethel-logo.png" width="161" height="50" alt="Bethel Logo">
+                  <nav id="about-bethel-media">
+                    <ul>
+                      <li><a href="#">Who is Bethel Media</a></li>
+                    </ul>
+                  </nav>
+                  <nav>
+                    <p><strong>Now Hiring</strong></p>
+                    <ul>
+                      <li ng-repeat="position in staff.openings">
+                        <a ng-class="{active: position.active}" ng-click="renderPosition(position)" ng-style="getNavStyle(position)">{{ position.name }}</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="span9">
+                <h1 ng-bind-html="position.name | lettering" id="position-name"></h1>
+              </div>
+
+            </div>
+          </header>
           <div id="main">
-            
+
             <section ng-repeat="position in staff.openings">
-              <div ng-show="position.active" id="{{position.name | toID}}">
-                <div id="get-in-touch">
-                  <div class="row-fluid">
-                    <div class="span3">
-                      <p>
-                        <a href="contact-us?subject={{position.name}}">Contact Us</a>
-                      </p>
-                    </div>
-                    <div class="span9">
-                      <a href="{{position.form}}" class="btn btn-primary">Apply Now</a>
-                    </div>
+              <div ng-show="position.active || mobile">
+                <div class="row-fluid" style="background-color:{{position.color}}">
+                  <div ng-hide="mobile" class="span3 contact-us">
+                    <a href="contact-us?subject={{position.name}}">Contact Us</a>
+                  </div>
+                  <div class="span9 apply-now">
+                    <a href="{{position.form}}" style="background-color:{{position.darker_color}}">Apply Now</a>
                   </div>
                 </div>
-                
+
                 <div class="row-fluid">
                   <div class="span9 offset3">
-                    <p>{{ position.summary }}</p>
+                    <div class="row-fluid">
+                      <p class="position-summary">{{ position.summary }}</p>
 
-                    <h4>Required Skills</h4>
-                    <ul>
-                      <li ng-repeat="skill in position.skills">{{ skill }}</li>
-                    </ul>
+                      <div class="span3">
+                        <h4>Required Skills</h4>
+                        <ul>
+                          <li ng-repeat="skill in position.skills">{{ skill }}</li>
+                        </ul>
+                      </div>
 
-                    <h4>Responsible For</h4>
-                    <ul>
-                      <li ng-repeat="responsibility in position.responsibilities">{{ responsibility }}</li>
-                    </ul>
+                      <div class="span3">
+                        <h4>Responsible For</h4>
+                        <ul>
+                          <li ng-repeat="responsibility in position.responsibilities">{{ responsibility }}</li>
+                        </ul>
+                      </div>
 
-                    <h4>Qualifications</h4>
-                    <ul>
-                      <li ng-repeat="qualification in position.qualifications">{{ qualification }}</li>
-                    </ul>
+                      <div class="span3">
+                        <h4>Qualifications</h4>
+                        <ul>
+                          <li ng-repeat="qualification in position.qualifications">{{ qualification }}</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                
+
               </div>
             </section>
           </div>
@@ -84,7 +92,8 @@
       </div>
     </div>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.js"></script>
   <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
