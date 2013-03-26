@@ -5,7 +5,7 @@
       name: "UX / UI Developer",
       tagline: "Make them look cool",
       summary: "THE UI DEV"
-      form: "",
+      form: "http://bcrr.us/ux/ui",
       skills: [
         "Takes direction well",
         "Works well as part of a team",
@@ -35,7 +35,7 @@
       name: "Drupal Developer",
       tagline: "Build our apps",
       summary: "THE DRUPAL DEV",
-      form: "",
+      form: "http://bcrr.us/drupal",
       skills: [
         "Takes direction well",
         "Works well as part of a team",
@@ -65,7 +65,7 @@
       name: "Software Engineer",
       tagline: "Build our apps",
       summary: "YOU WILL BUILD AWESOME STUFF",
-      form: "",
+      form: "http://bcrr.us/softwareengineer",
       skills: [
         "Takes direction well",
         "Works well as part of a team",
@@ -95,7 +95,7 @@
       name: "Web Designer",
       tagline: "Make them look cool",
       summary: "CAN YOU DESIGN THIS?",
-      form: "",
+      form: "http://bcrr.us/webdesigner",
       skills: [
         "Takes direction well",
         "Works well as part of a team",
