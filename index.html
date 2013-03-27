@@ -30,7 +30,7 @@
                     <p><strong>Now Hiring</strong></p>
                     <ul>
                       <li ng-repeat="position in staff.openings">
-                        <a ng-class="{active: position.active}" ng-click="renderPosition(position)" ng-style="getNavStyle(position)">{{ position.name }}</a>
+                        <a href="#/careers/{{position.slug}}" ng-class="{active: position.active}" ng-style="getNavStyle(position)">{{ position.name }}</a>
                       </li>
                     </ul>
                   </nav>
@@ -42,55 +42,7 @@
 
             </div>
           </header>
-          <div id="main">
-
-            <section ng-repeat="position in staff.openings">
-              <div ng-show="position.active || mobile">
-                <div class="row-fluid" style="background-color:{{position.color}}">
-                  <div ng-hide="mobile" class="span3 contact-us">
-                    <a href="contact-us?subject={{position.name}}">Contact Us</a>
-                  </div>
-                  <div class="span9 apply-now">
-                    <a href="{{position.form}}" style="background-color:{{position.darker_color}}">Apply Now</a>
-                  </div>
-                </div>
-
-                <div class="row-fluid">
-                  <div class="span9 offset3">
-                    <div class="row-fluid">
-                      <div class="span12">
-                        <p class="position-summary">{{ position.summary }}</p>
-                      </div>
-                    </div>
-                    <div class="row-fluid">
-
-                      <div class="span4">
-                        <h4>Required Skills</h4>
-                        <ul>
-                          <li ng-repeat="skill in position.skills">{{ skill }}</li>
-                        </ul>
-                      </div>
-
-                      <div class="span4">
-                        <h4>Responsible For</h4>
-                        <ul>
-                          <li ng-repeat="responsibility in position.responsibilities">{{ responsibility }}</li>
-                        </ul>
-                      </div>
-
-                      <div class="span4">
-                        <h4>Qualifications</h4>
-                        <ul>
-                          <li ng-repeat="qualification in position.qualifications">{{ qualification }}</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </section>
-          </div>
+          <div id="main" ng-view></div>
 
         </div>
       </div>

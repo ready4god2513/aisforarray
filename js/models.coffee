@@ -3,6 +3,7 @@
   staff.openings = [
     {
       name: "UX / UI Developer",
+      slug: "ux-ui-developer",
       tagline: "",
       summary: "Make them Bethel Media UX / UI Developers are passionate about defining and implementing graphical user interfaces.  As a vital member of our team, and working closely with our world-class web designers, you will bring both an eye for design and the skill to execute. You will give input and guidance during the design process and will be responsible for styling, interaction, and markup development based on the concepts and direction provided by our creative team. (You would be primarily focused on our Ruby on Rails projects.)"
       form: "http://bcrr.us/ux/ui",
@@ -36,6 +37,7 @@
     }
     {
       name: "Drupal Developer",
+      slug: "drupal-developer",
       tagline: "Build our apps",
       summary: "Bethel Media Drupal Developers build high quality web applications with great user experiences. On our team of software developers and designers, you will be responsible for theming, module development, and configuration of all Bethel Drupal sites. You will be working closely with our experienced web designers by giving input during the design process to ensure that the designs will work within Drupal’s technical constraints.",
       form: "http://bcrr.us/drupal",
@@ -71,6 +73,7 @@
     }
     {
       name: "Software Engineer",
+      slug: "software-engineer",
       tagline: "Build our apps",
       summary: "Bethel Media Software Engineers provide world-class systems, rich web applications, and comprehensive solutions. You will be working closely with our experienced web designers by giving input during the design process to ensure that the designs will work within our technical constraints.   You will be responsible for providing technical leadership on projects, reviewing code developed by other members of the technical team, assisting in developing and estimating stories as part of the agile methodology and assisting/mentoring  any junior web developers on the team. (You would be primarily focused on our Ruby on Rails projects.)",
       form: "http://bcrr.us/softwareengineer",
@@ -103,6 +106,7 @@
     }
     {
       name: "Web Designer",
+      slug: "web-designer",
       tagline: "Make them look cool",
       summary: "Bethel Media Web Designers provide world-class user experiences for Bethel’s local and global community. As a part of the Bethel family, you will work closely with a talented and growing team on interactive projects, rich applications and compelling user experiences. You will be responsible for wireframing, designing, and leading the overall thought and direction of the user experience.",
       form: "http://bcrr.us/webdesigner",

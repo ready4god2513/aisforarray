@@ -1,0 +1,46 @@
+<section ng-repeat="position in staff.openings">
+  <div ng-show="position.active || mobile">
+    <div class="row-fluid" style="background-color:{{position.color}}">
+      <div ng-hide="mobile" class="span3 contact-us">
+        <a href="#/contact-us">Contact Us</a>
+      </div>
+      <div class="span9 apply-now">
+        <a href="{{position.form}}" style="background-color:{{position.darker_color}}">Apply Now</a>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span9 offset3">
+        <div class="row-fluid">
+          <div class="span12">
+            <p class="summary">{{ position.summary }}</p>
+          </div>
+        </div>
+        <div class="row-fluid">
+
+          <div class="span4">
+            <h4>Required Skills</h4>
+            <ul>
+              <li ng-repeat="skill in position.skills">{{ skill }}</li>
+            </ul>
+          </div>
+
+          <div class="span4">
+            <h4>Responsible For</h4>
+            <ul>
+              <li ng-repeat="responsibility in position.responsibilities">{{ responsibility }}</li>
+            </ul>
+          </div>
+
+          <div class="span4">
+            <h4>Qualifications</h4>
+            <ul>
+              <li ng-repeat="qualification in position.qualifications">{{ qualification }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

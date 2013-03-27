@@ -5404,6 +5404,10 @@ header {
     padding: 0 20px; } }
 #main {
   padding-bottom: 20px; }
+  #main h4 {
+    font-size: 18px;
+    font-weight: 200;
+    text-transform: uppercase; }
   #main .apply-now, #main .contact-us {
     display: inline-block;
     line-height: 65px; }
@@ -5415,11 +5419,14 @@ header {
       padding: 0 0 0 20px; }
   #main .apply-now a {
     background: #d4d4d4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     color: white;
     font-weight: 400;
     padding: 10px 40px;
     text-transform: uppercase; }
-  #main p.position-summary {
+  #main .summary {
     border-bottom: 1px solid #cccccc;
     margin: 20px 0;
     padding: 20px 0; }

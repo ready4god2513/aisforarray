@@ -1,17 +1,19 @@
-@app.controller "CareersCtrl", ($scope, $window, Staff) ->
+@app.controller "CareersCtrl", ($scope, $window, $routeParams, Staff) ->
   $scope.staff = Staff
-  $scope.position = Staff.openings[0]
-  Staff.openings[0].active = true
+  $scope.position = ""
+  
+  angular.forEach $scope.staff.openings, (o) ->
+    $scope.position = o if angular.equals(o.slug, $routeParams.name)
+    o.active = angular.equals(o.slug, $routeParams.name)
+  
   $scope.mobile = $window.document.width < 700
+  
+  $scope.getHeaderBg = ->
+    { "background-image": "url(#{$scope.position.image})" }
   
   $scope.getNavStyle = (position) ->
     if position.active
       { color: position.color }
-  
-  $scope.renderPosition = (position) ->
-    $scope.position = position
-    angular.forEach $scope.staff.openings, (o) ->
-      o.active = angular.equals(o, position)
       
 @app.controller "rootCtrl", ($scope) ->
   

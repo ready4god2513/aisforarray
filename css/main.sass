@@ -84,6 +84,11 @@ header
   
   padding-bottom: 20px
   
+  h4
+    font-size: 18px
+    font-weight: 200
+    text-transform: uppercase
+  
   .apply-now, .contact-us
     display: inline-block
     line-height: $apply_height
@@ -99,12 +104,13 @@ header
   .apply-now
     a
       background: #d4d4d4
+      @include border-radius(4px)
       color: #fff
       font-weight: 400
       padding: 10px 40px
       text-transform: uppercase
       
-  p.position-summary
+  .summary
     border-bottom: 1px solid #ccc
     margin: 20px 0
     padding: 20px 0

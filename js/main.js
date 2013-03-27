@@ -52,6 +52,7 @@
     staff.openings = [
       {
         name: "UX / UI Developer",
+        slug: "ux-ui-developer",
         tagline: "",
         summary: "Make them Bethel Media UX / UI Developers are passionate about defining and implementing graphical user interfaces.  As a vital member of our team, and working closely with our world-class web designers, you will bring both an eye for design and the skill to execute. You will give input and guidance during the design process and will be responsible for styling, interaction, and markup development based on the concepts and direction provided by our creative team. (You would be primarily focused on our Ruby on Rails projects.)",
         form: "http://bcrr.us/ux/ui",
@@ -63,6 +64,7 @@
         qualifications: ["2-3 years technical experience in related field", "4-year college degree or equivalent experience in programming", "Working knowledge of MVC frameworks", "Experience with PHP, MySQL, CSS, HTML, JavaScript, jQuery, Compiled CSS, CoffeeScript"]
       }, {
         name: "Drupal Developer",
+        slug: "drupal-developer",
         tagline: "Build our apps",
         summary: "Bethel Media Drupal Developers build high quality web applications with great user experiences. On our team of software developers and designers, you will be responsible for theming, module development, and configuration of all Bethel Drupal sites. You will be working closely with our experienced web designers by giving input during the design process to ensure that the designs will work within Drupal’s technical constraints.",
         form: "http://bcrr.us/drupal",
@@ -74,6 +76,7 @@
         qualifications: ["Proficient in CSS, HTML, Javascript, AJAX, MySQL and PHP.", "Proficient in the current version of Adobe CS", "3 to 5 years of Drupal experience (CMS Framework, Themes, Modules, Core, etc.). Ability to provide samples of applications you have developed is desired.", "Experience with and understanding of cross browser compatibility issues", "Agile experience is desired", "Experience with git or similar source control system", "Proficient in the maintenance and administration of Drupal modules and sites"]
       }, {
         name: "Software Engineer",
+        slug: "software-engineer",
         tagline: "Build our apps",
         summary: "Bethel Media Software Engineers provide world-class systems, rich web applications, and comprehensive solutions. You will be working closely with our experienced web designers by giving input during the design process to ensure that the designs will work within our technical constraints.   You will be responsible for providing technical leadership on projects, reviewing code developed by other members of the technical team, assisting in developing and estimating stories as part of the agile methodology and assisting/mentoring  any junior web developers on the team. (You would be primarily focused on our Ruby on Rails projects.)",
         form: "http://bcrr.us/softwareengineer",
@@ -85,6 +88,7 @@
         qualifications: ["Experience on a team of developers using Agile software development methodology.", "3 - 5+ years experience in working with a team of software developers.", "Previous experience in open-source programming languages.", "4 year degree in a related field or equivalent work experience.", "Experience working with MVC frameworks.", "Experience with Ruby on Rails, PHP, MySQL, CSS, Sass, HTML, Haml, Javascript, Coffeescript.  jQuery, Coffeescript."]
       }, {
         name: "Web Designer",
+        slug: "web-designer",
         tagline: "Make them look cool",
         summary: "Bethel Media Web Designers provide world-class user experiences for Bethel’s local and global community. As a part of the Bethel family, you will work closely with a talented and growing team on interactive projects, rich applications and compelling user experiences. You will be responsible for wireframing, designing, and leading the overall thought and direction of the user experience.",
         form: "http://bcrr.us/webdesigner",
@@ -105,26 +109,52 @@
   */
 
 
-  this.app.controller("CareersCtrl", function($scope, $window, Staff) {
+  this.app.controller("CareersCtrl", function($scope, $window, $routeParams, Staff) {
     $scope.staff = Staff;
-    $scope.position = Staff.openings[0];
-    Staff.openings[0].active = true;
+    $scope.position = "";
+    angular.forEach($scope.staff.openings, function(o) {
+      if (angular.equals(o.slug, $routeParams.name)) {
+        $scope.position = o;
+      }
+      return o.active = angular.equals(o.slug, $routeParams.name);
+    });
     $scope.mobile = $window.document.width < 700;
-    $scope.getNavStyle = function(position) {
+    $scope.getHeaderBg = function() {
+      return {
+        "background-image": "url(" + $scope.position.image + ")"
+      };
+    };
+    return $scope.getNavStyle = function(position) {
       if (position.active) {
         return {
           color: position.color
         };
       }
     };
-    return $scope.renderPosition = function(position) {
-      $scope.position = position;
-      return angular.forEach($scope.staff.openings, function(o) {
-        return o.active = angular.equals(o, position);
-      });
-    };
   });
 
   this.app.controller("rootCtrl", function($scope) {});
+
+  /* --------------------------------------------
+       Begin routes.coffee
+  --------------------------------------------
+  */
+
+
+  this.app.config(function($routeProvider) {
+    return $routeProvider.when("/", {
+      templateUrl: "partials/home.html",
+      controller: "rootCtrl"
+    }).when("/contact-us", {
+      templateUrl: "partials/contact.html",
+      controller: "rootCtrl"
+    }).when("/careers", {
+      templateUrl: "partials/openings.html",
+      controller: "CareersCtrl"
+    }).when("/careers/:name", {
+      templateUrl: "partials/openings.html",
+      controller: "CareersCtrl"
+    });
+  });
 
 }).call(this);
