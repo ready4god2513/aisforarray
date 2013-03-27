@@ -31,6 +31,9 @@
   this.app.filter("lettering", function() {
     return function(text) {
       var result, words;
+      if (!text) {
+        return;
+      }
       words = text.split(" ");
       result = [];
       angular.forEach(words, function(word, key) {
@@ -111,7 +114,6 @@
 
   this.app.controller("CareersCtrl", function($scope, $window, $routeParams, Staff) {
     $scope.staff = Staff;
-    $scope.position = "";
     angular.forEach($scope.staff.openings, function(o) {
       if (angular.equals(o.slug, $routeParams.name)) {
         $scope.position = o;

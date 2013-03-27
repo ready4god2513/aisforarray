@@ -1,9 +1,9 @@
 @app.controller "CareersCtrl", ($scope, $window, $routeParams, Staff) ->
   $scope.staff = Staff
-  $scope.position = ""
   
   angular.forEach $scope.staff.openings, (o) ->
-    $scope.position = o if angular.equals(o.slug, $routeParams.name)
+    if angular.equals(o.slug, $routeParams.name)
+      $scope.position = o
     o.active = angular.equals(o.slug, $routeParams.name)
   
   $scope.mobile = $window.document.width < 700

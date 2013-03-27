@@ -4,6 +4,7 @@
     
 @app.filter "lettering", ->
   (text) ->
+    return unless text
     words = text.split(" ")
     result = []
     angular.forEach words, (word, key) ->
