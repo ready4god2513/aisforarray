@@ -135,8 +135,8 @@
     };
   });
 
-  this.app.controller("rootCtrl", function($scope, $routeParams) {
-    return $scope.active = true;
+  this.app.controller("rootCtrl", function($scope, $location) {
+    return $scope.contact = $location.path().match(/contact/g);
   });
 
   /* --------------------------------------------

@@ -1,3 +1,5 @@
+# Used for showing all of the career options as defined in the
+# models.coffee hash
 @app.controller "CareersCtrl", ($scope, $window, $routeParams, Staff) ->
   $scope.staff = Staff
   
@@ -15,6 +17,11 @@
     if position.active
       { color: position.color }
       
-@app.controller "rootCtrl", ($scope, $routeParams) ->
-  $scope.active = true
+      
+# Root controller for managing the home page as well
+# as the contact us page
+@app.controller "rootCtrl", ($scope, $location) ->
+  # Setting contact to true will allow the contact us item
+  # to receive the "active" class
+  $scope.contact = $location.path().match(/contact/g)
   
