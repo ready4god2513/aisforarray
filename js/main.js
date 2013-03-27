@@ -135,7 +135,9 @@
     };
   });
 
-  this.app.controller("rootCtrl", function($scope) {});
+  this.app.controller("rootCtrl", function($scope, $routeParams) {
+    return $scope.active = true;
+  });
 
   /* --------------------------------------------
        Begin routes.coffee

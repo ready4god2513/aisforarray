@@ -15,5 +15,6 @@
     if position.active
       { color: position.color }
       
-@app.controller "rootCtrl", ($scope) ->
+@app.controller "rootCtrl", ($scope, $routeParams) ->
+  $scope.active = true
   

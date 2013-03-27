@@ -1,6 +1,7 @@
 @import "bootstrap"
 $header_height: 500px
 $apply_height: 65px
+$orange: #e87424
 
 a
   cursor:  pointer
@@ -19,13 +20,9 @@ header
       border-left: none
       border-right: none
       
-      &:last-child
-        border-top: none
-        padding-top: 0
-    
-    p
-      color: #ccc
-      font-weight: 400
+    nav:last-child ul
+      border-top: none
+      padding-top: 0
       
     img
       margin-bottom: 40px
@@ -46,6 +43,12 @@ header
           
           &.active
             color: #de3a3e
+            
+    p
+      color: #ccc
+      font-size: 14px
+      font-weight: 200
+      text-transform: uppercase
     
   h1#position-name
     bottom: 10px
@@ -81,23 +84,31 @@ header
       padding: 0 20px
       
 #main
+  min-height: 400px
+  padding-bottom: 100px
   
-  padding-bottom: 20px
+  a
+    color: $orange
   
   h4
     font-size: 18px
     font-weight: 200
     text-transform: uppercase
   
-  .apply-now, .contact-us
+  .apply-now, #contact-us
     display: inline-block
     line-height: $apply_height
   
     a
       vertical-align: center
       
-  .contact-us
+  #contact-us
     background: #e8e8e8
+    
+    &.active
+      background: $orange
+      a
+        color: #fff
     a
       padding: 0 0 0 20px
       
