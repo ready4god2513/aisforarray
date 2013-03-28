@@ -89,15 +89,16 @@ header
       padding: 0 20px
       
 #main
-  min-height: 500px
-  padding-bottom: 100px
+  min-height: 400px
+  padding-bottom: 80px
   
   p, ul
     a
       color: $orange
   
   h4
-    font-size: 18px
+    font-family: 'Open Sans Condensed', sans-serif
+    font-size: 24px
     font-weight: 200
     text-transform: uppercase
   
@@ -117,6 +118,7 @@ header
         color: #fff
     a
       padding: 0 0 0 20px
+      color: darken(#999, 5%)
       
   .apply-now
     a
@@ -129,6 +131,17 @@ header
       
   .summary
     border-bottom: 1px solid #ccc
-    margin: 20px 0
     padding: 20px 0
     
+  ul
+    list-style:  none
+    padding: 0
+    margin:  0
+    
+    li
+      padding: 3px 0 0 1em
+      text-indent: -.7em
+      
+      &:before
+        content: "• "
+        color: darken(#ccc, 10%)

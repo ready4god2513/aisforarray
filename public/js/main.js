@@ -17,10 +17,28 @@
   });
 
   /* --------------------------------------------
-       Begin directives.coffee
+       Begin routes.coffee
   --------------------------------------------
   */
 
+
+  this.app.config(function($routeProvider) {
+    return $routeProvider.when("/", {
+      templateUrl: "partials/home.html",
+      controller: "HomeCtrl"
+    }).when("/contact-us", {
+      templateUrl: "partials/contact.html",
+      controller: "ContactCtrl"
+    }).when("/careers/:name", {
+      templateUrl: "partials/openings.html",
+      controller: "CareersCtrl"
+    }).when("/careers/:name/apply", {
+      templateUrl: "partials/apply.html",
+      controller: "CareersCtrl"
+    }).otherwise({
+      redirectTo: "/"
+    });
+  });
 
   /* --------------------------------------------
        Begin filters.coffee
@@ -63,8 +81,8 @@
         name: "UX / UI Developer",
         slug: "ux-ui-developer",
         tagline: "",
-        summary: "Make them Bethel Media UX / UI Developers are passionate about defining and implementing graphical user interfaces.  As a vital member of our team, and working closely with our world-class web designers, you will bring both an eye for design and the skill to execute. You will give input and guidance during the design process and will be responsible for styling, interaction, and markup development based on the concepts and direction provided by our creative team. (You would be primarily focused on our Ruby on Rails projects.)",
-        form: "https://docs.google.com/a/ibethel.org/spreadsheet/embeddedform?formkey=dFNyRFFmUWhxQUliQ2xELUh0VEVmZGc6MQ",
+        summary: "Bethel Media UX / UI Developers are passionate about defining and implementing graphical user interfaces.  As a vital member of our team, and working closely with our world-class web designers, you will bring both an eye for design and the skill to execute. You will give input and guidance during the design process and will be responsible for styling, interaction, and markup development based on the concepts and direction provided by our creative team. <em>(You would be primarily focused on our Ruby on Rails projects.)</em>",
+        form: "http://www.surveygizmo.com/s3/iframe/1188461/56d7330275e0",
         color: "#ad2e5d",
         darker_color: "#891a43",
         image: "img/img_uxuideveloper.jpg",
@@ -87,8 +105,8 @@
         name: "Software Engineer",
         slug: "software-engineer",
         tagline: "Build our apps",
-        summary: "Bethel Media Software Engineers provide world-class systems, rich web applications, and comprehensive solutions. You will be working closely with our experienced web designers by giving input during the design process to ensure that the designs will work within our technical constraints.   You will be responsible for providing technical leadership on projects, reviewing code developed by other members of the technical team, assisting in developing and estimating stories as part of the agile methodology and assisting/mentoring  any junior web developers on the team. (You would be primarily focused on our Ruby on Rails projects.)",
-        form: "https://docs.google.com/a/ibethel.org/spreadsheet/embeddedform?formkey=dFNyRFFmUWhxQUliQ2xELUh0VEVmZGc6MQ",
+        summary: "Bethel Media Software Engineers provide world-class systems, rich web applications, and comprehensive solutions. You will be working closely with our experienced web designers by giving input during the design process to ensure that the designs will work within our technical constraints.   You will be responsible for providing technical leadership on projects, reviewing code developed by other members of the technical team, assisting in developing and estimating stories as part of the agile methodology and assisting/mentoring  any junior web developers on the team. <em>(You would be primarily focused on our Ruby on Rails projects.)</em>",
+        form: "http://www.surveygizmo.com/s3/iframe/1207509/3223205893ac",
         color: "#a6c657",
         darker_color: "#8cac3b",
         image: "img/img_softwareengineer.jpg",
@@ -100,7 +118,7 @@
         slug: "web-designer",
         tagline: "Make them look cool",
         summary: "Bethel Media Web Designers provide world-class user experiences for Bethel’s local and global community. As a part of the Bethel family, you will work closely with a talented and growing team on interactive projects, rich applications and compelling user experiences. You will be responsible for wireframing, designing, and leading the overall thought and direction of the user experience.",
-        form: "https://docs.google.com/a/ibethel.org/spreadsheet/embeddedform?formkey=dFNyRFFmUWhxQUliQ2xELUh0VEVmZGc6MQ",
+        form: "http://www.surveygizmo.com/s3/iframe/1114006/6b100a7df848",
         color: "#de3a3e",
         darker_color: "#c5292d",
         image: "img/img_webdeveloper.jpg",
@@ -164,27 +182,9 @@
   });
 
   /* --------------------------------------------
-       Begin routes.coffee
+       Begin directives.coffee
   --------------------------------------------
   */
 
-
-  this.app.config(function($routeProvider) {
-    return $routeProvider.when("/", {
-      templateUrl: "partials/home.html",
-      controller: "HomeCtrl"
-    }).when("/contact-us", {
-      templateUrl: "partials/contact.html",
-      controller: "ContactCtrl"
-    }).when("/careers/:name", {
-      templateUrl: "partials/openings.html",
-      controller: "CareersCtrl"
-    }).when("/careers/:name/apply", {
-      templateUrl: "partials/apply.html",
-      controller: "CareersCtrl"
-    }).otherwise({
-      redirectTo: "/"
-    });
-  });
 
 }).call(this);
