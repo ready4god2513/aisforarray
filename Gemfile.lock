@@ -1,16 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    excon (0.16.10)
-    heroku-api (0.3.8)
-      excon (~> 0.16.10)
-    heroku_san (4.2.5)
-      heroku-api (>= 0.1.2)
-      rake
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
-    rake (10.0.4)
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
@@ -21,5 +14,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  heroku_san
   sinatra
