@@ -1,27 +1,31 @@
-<header style="background-image:url(img/img_contactus.jpg)">
-  <div class="row-fluid">
+<div ng-controller="LayoutCtrl">
+  <header ng-style="image">
+    <div class="row-fluid">
 
-    <div class="span3">
-      <div id="sidebar-nav">
-        <img src="img/bethel-logo.png" width="161" height="50" alt="Bethel Logo">
-        <nav id="about-bethel-media">
-          <ul>
-            <li><a href="#/">Who is Bethel Media</a></li>
-          </ul>
-        </nav>
-        <nav>
-          <p><strong>Now Hiring</strong></p>
-          <ul>
-            <li ng-repeat="position in staff.openings">
-              <a href="#/careers/{{position.slug}}" ng-class="{active: position.active}" ng-style="getNavStyle(position)">{{ position.name }}</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="span3">
+        <div id="sidebar-nav">
+          <img src="img/bethel-logo.png" width="161" height="50" alt="Bethel Logo">
+          <nav id="about-bethel-media">
+            <ul>
+              <li><a href="#/">Who is Bethel Media</a></li>
+            </ul>
+          </nav>
+          <nav>
+            <p><strong>Now Hiring</strong></p>
+            <ul ng-controller="CareersCtrl">
+              <li ng-repeat="position in staff.openings">
+                <a href="#/careers/{{position.slug}}" ng-class="{active: position.active}" ng-style="getNavStyle(position)">
+                  {{ position.name }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
-    <div class="span9">
-      <h1 ng-bind-html="position.name | lettering" id="position-name"></h1>
-    </div>
+      <div class="span9">
+        <h1 ng-bind-html="name | lettering" id="position-name"></h1>
+      </div>
 
-  </div>
-</header>
+    </div>
+  </header>
+</div>

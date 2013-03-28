@@ -10,6 +10,12 @@
 
   this.app = angular.module("careers", ["ngSanitize"]);
 
+  this.app.run(function($rootScope) {
+    return $rootScope.$on("emit-template-change", function(event, args) {
+      return $rootScope.$broadcast("template-change", args);
+    });
+  });
+
   /* --------------------------------------------
        Begin directives.coffee
   --------------------------------------------
@@ -112,20 +118,18 @@
   */
 
 
-  this.app.controller("CareersCtrl", function($scope, $window, $routeParams, Staff) {
+  this.app.controller("CareersCtrl", function($scope, $routeParams, Staff) {
     $scope.staff = Staff;
     angular.forEach($scope.staff.openings, function(o) {
       if (angular.equals(o.slug, $routeParams.name)) {
         $scope.position = o;
+        $scope.$emit("emit-template-change", {
+          name: o.name,
+          image: o.image
+        });
       }
       return o.active = angular.equals(o.slug, $routeParams.name);
     });
-    $scope.mobile = $window.document.width < 700;
-    $scope.getHeaderBg = function() {
-      return {
-        "background-image": "url(" + $scope.position.image + ")"
-      };
-    };
     return $scope.getNavStyle = function(position) {
       if (position.active) {
         return {
@@ -135,8 +139,28 @@
     };
   });
 
-  this.app.controller("rootCtrl", function($scope, $location) {
-    return $scope.contact = $location.path().match(/contact/g);
+  this.app.controller("HomeCtrl", function($scope, $location) {
+    return $scope.$emit("emit-template-change", {
+      name: "Will Work for Revival",
+      image: "img/img_whoweare.jpg"
+    });
+  });
+
+  this.app.controller("ContactCtrl", function($scope, $location) {
+    return $scope.$emit("emit-template-change", {
+      name: "Contact Us",
+      image: "img/img_contactus.jpg"
+    });
+  });
+
+  this.app.controller("LayoutCtrl", function($scope, $location) {
+    $scope.contact = $location.path().match(/contact/g);
+    return $scope.$on("template-change", function(event, args) {
+      $scope.name = args.name;
+      return $scope.image = {
+        "background-image": "url(" + args.image + ")"
+      };
+    });
   });
 
   /* --------------------------------------------
@@ -148,16 +172,15 @@
   this.app.config(function($routeProvider) {
     return $routeProvider.when("/", {
       templateUrl: "partials/home.html",
-      controller: "rootCtrl"
+      controller: "HomeCtrl"
     }).when("/contact-us", {
       templateUrl: "partials/contact.html",
-      controller: "rootCtrl"
-    }).when("/careers", {
-      templateUrl: "partials/openings.html",
-      controller: "CareersCtrl"
+      controller: "ContactCtrl"
     }).when("/careers/:name", {
       templateUrl: "partials/openings.html",
       controller: "CareersCtrl"
+    }).otherwise({
+      redirectTo: "/"
     });
   });
 

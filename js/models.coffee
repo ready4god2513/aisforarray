@@ -1,4 +1,5 @@
 @app.factory "Staff", ->
+      
   staff = {}
   staff.openings = [
     {

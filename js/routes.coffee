@@ -2,13 +2,12 @@
   $routeProvider
     .when "/",
       templateUrl: "partials/home.html"
-      controller: "rootCtrl"
+      controller: "HomeCtrl"
     .when "/contact-us",
       templateUrl: "partials/contact.html"
-      controller: "rootCtrl"
-    .when "/careers", 
-      templateUrl: "partials/openings.html"
-      controller: "CareersCtrl"
+      controller: "ContactCtrl"
     .when "/careers/:name", 
       templateUrl: "partials/openings.html"
       controller: "CareersCtrl"
+    .otherwise
+      redirectTo: "/"
