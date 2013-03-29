@@ -17,10 +17,17 @@
         image: o.image
         
     o.active = angular.equals(o.slug, $routeParams.name)
+    o.shown = o.active
   
   $scope.getNavStyle = (position) ->
     if position.active
       { color: position.color }
+      
+  $scope.setActive = (position) ->
+    position.active = true
+    
+  $scope.setInactive = (position) ->
+    position.active = false unless position.shown
       
       
 # Root controller for managing the home page
@@ -35,10 +42,15 @@
     name: "Contact Us",
     image: "img/img_contactus.jpg"
   
+
 @app.controller "LayoutCtrl", ($scope, $location) ->
   # Setting contact to true will allow the contact us item
   # to receive the "active" class
   $scope.contact = $location.path().match(/contact/g)
+  
+  $scope.onPage = (page) ->
+    page = page.replace(/[^A-Za-z0-9 ]/g, '')
+    $location.path().replace(/[^A-Za-z0-9 ]/g, '').match(page, 'g')
   
   $scope.$on "template-change", (event, args) ->
     $scope.name = args.name

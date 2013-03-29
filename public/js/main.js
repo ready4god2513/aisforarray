@@ -23,7 +23,7 @@
 
 
   this.app.config(function($routeProvider) {
-    return $routeProvider.when("/", {
+    return $routeProvider.when("/home", {
       templateUrl: "partials/home.html",
       controller: "HomeCtrl"
     }).when("/contact-us", {
@@ -36,7 +36,7 @@
       templateUrl: "partials/apply.html",
       controller: "CareersCtrl"
     }).otherwise({
-      redirectTo: "/"
+      redirectTo: "/home"
     });
   });
 
@@ -146,13 +146,22 @@
           image: o.image
         });
       }
-      return o.active = angular.equals(o.slug, $routeParams.name);
+      o.active = angular.equals(o.slug, $routeParams.name);
+      return o.shown = o.active;
     });
-    return $scope.getNavStyle = function(position) {
+    $scope.getNavStyle = function(position) {
       if (position.active) {
         return {
           color: position.color
         };
+      }
+    };
+    $scope.setActive = function(position) {
+      return position.active = true;
+    };
+    return $scope.setInactive = function(position) {
+      if (!position.shown) {
+        return position.active = false;
       }
     };
   });
@@ -173,6 +182,10 @@
 
   this.app.controller("LayoutCtrl", function($scope, $location) {
     $scope.contact = $location.path().match(/contact/g);
+    $scope.onPage = function(page) {
+      page = page.replace(/[^A-Za-z0-9 ]/g, '');
+      return $location.path().replace(/[^A-Za-z0-9 ]/g, '').match(page, 'g');
+    };
     return $scope.$on("template-change", function(event, args) {
       $scope.name = args.name;
       return $scope.image = {
