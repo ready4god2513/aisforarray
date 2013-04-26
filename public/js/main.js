@@ -90,18 +90,6 @@
         responsibilities: ["Styling, interation and markup development based on wireframes and design mockups", "Bridge gap between design and technology", "Provide alternative solutions when design exceeds technology limitations", "Building out designs from a psd from our design team"],
         qualifications: ["2-3 years technical experience in related field", "4-year college degree or equivalent experience in programming", "Working knowledge of MVC frameworks", "Experience with PHP, MySQL, CSS, HTML, JavaScript, jQuery, Compiled CSS, CoffeeScript"]
       }, {
-        name: "Drupal Developer",
-        slug: "drupal-developer",
-        tagline: "Build our apps",
-        summary: "Bethel Media Drupal Developers build high quality web applications with great user experiences. On our team of software developers and designers, you will be responsible for theming, module development, and configuration of all Bethel Drupal sites. You will be working closely with our experienced web designers by giving input during the design process to ensure that the designs will work within Drupal’s technical constraints.",
-        form: "http://www.surveygizmo.com/s3/1114006/Drupal-Developer",
-        color: "#119c8d",
-        darker_color: "#0a796d",
-        image: "img/img_drupaldeveloper.jpg",
-        skills: ["Ability to create website from a .PSD", "Focused on producing a high quality end product", "Agile experience desired", "Able to prioritize own workload", "Able to translate business requirements to technical solutions", "Ability to work in a fast-paced, dynamic, team environment"],
-        responsibilities: ["Write and/or oversee all of the CSS, HTML and Javascript on the Bethel’s Drupal sites", "Configure and update the code on Bethel's CMS websites", "Write custom modules for CMS websites", "Provide recommendations for best practices in CMS websites", "Play a role in sprint pre-planning such as providing input into writing stories and estimating", "Set up development, test and production environments for new web applications", "Continue to stay current with new releases of Drupal"],
-        qualifications: ["Proficient in CSS, HTML, Javascript, AJAX, MySQL and PHP.", "Proficient in the current version of Adobe CS", "3 to 5 years of Drupal experience (CMS Framework, Themes, Modules, Core, etc.). Ability to provide samples of applications you have developed is desired.", "Experience with and understanding of cross browser compatibility issues", "Agile experience is desired", "Experience with git or similar source control system", "Proficient in the maintenance and administration of Drupal modules and sites"]
-      }, {
         name: "Software Engineer",
         slug: "software-engineer",
         tagline: "Build our apps",
