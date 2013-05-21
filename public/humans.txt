@@ -3,9 +3,9 @@
 
 # TEAM
     Brandon Hansen      Developer       @ready4god2513
-    Ryan Nordyke        Designer        
+    Ben Coleman         Designer        
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    Twitter Bootstrap, AngularJS
+    Twitter Bootstrap
