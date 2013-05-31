@@ -24,8 +24,8 @@
       <header>
         <div class="col col-lg-12">
           <h1>
-            A is for Array
-            <small>A Novelty ABC Book</small>
+          A is for Array
+          <small>A Novelty ABC Book</small>
           </h1>
         </div>
       </header>
@@ -33,36 +33,50 @@
         <div class="row">
           <div class="col col-lg-7">
             <p>
-              A is for Array was written for my kids.  My kids, Autumn (3), Benjamin (1) and Clay (3 weeks) know that I am a programmer.  They see me write code almost every day.  They have taken interest in my work.  They often ask if they can write code.  The book is for them to look at the pictures and hear a few silly words from the vocabulary that I use every day.
+            A is for Array was written for my kids.  My kids, Autumn (3), Benjamin (1) and Clay (3 weeks) know that I am a programmer.  They see me write code almost every day.  They have taken interest in my work.  They often ask if they can write code.  The book is for them to look at the pictures and hear a few silly words from the vocabulary that I use every day.
             </p>
             <p>
-              The book is <strong>simply a novelty item</strong> for programmers to share in a few moments with their kids.  I have no illusion that kids will learn programming from this book.  I don't even read the "long wall of text" pages to my kids.  We look at the pictures, talk for a second about what each one is, read the large print, then turn to the next page.  In other words, we read an ABC book together.
+            The book is <strong>simply a novelty item</strong> for programmers to share in a few moments with their kids.  I have no illusion that kids will learn programming from this book.  I don't even read the "long wall of text" pages to my kids.  We look at the pictures, talk for a second about what each one is, read the large print, then turn to the next page.  In other words, we read an ABC book together.
             </p>
             <p>
-              None of that is to say that the book is at all a waste in terms of programming.  My hope is that someday when the kids are older they might grab the book off the shelf and ask me some questions about some of it.  Then we can talk about it when they are actually ready.
+            None of that is to say that the book is at all a waste in terms of programming.  My hope is that someday when the kids are older they might grab the book off the shelf and ask me some questions about some of it.  Then we can talk about it when they are actually ready.
             </p>
             <p>
-              So, please, if you think that this book is some magic that is going to get your kid writing apps that will instantly turn them into the next Linus Torvalds, please don't be deceived.
+            So, please, if you think that this book is some magic that is going to get your kid writing apps that will instantly turn them into the next Linus Torvalds, please don't be deceived.
             </p>
             <p>But if you just want a novelty book that combines the ABCs with some programming lingo and cool illustrations, then, please, get a copy of the book and spend some quality time enjoying your kids.</p>
             <h5>Thanks for your interest.</h5>
             <p>
-              Share this book with your little programmers-to-be.
+            Share this book with your little programmers-to-be.
             </p>
             <h4 class="">Available for Purchase at:</h4>
             <a href="http://goo.gl/4bLE3">
-              <img src="img/commerce/amazon-logo.jpg" alt="Purchase A is for Array on Amazon" />
+            <img src="img/commerce/amazon-logo.jpg" alt="Purchase A is for Array on Amazon" />
             </a>
           </div>
           <aside class="col col-lg-5">
             <h4>Samples from the Book</h4>
-            <img src="img/1.png" class="well"></img>
-            <img src="img/2.png" class="well"></img>
-            <img src="img/3.png" class="well"></img>
-            <img src="img/4.png" class="well"></img>
-            <img src="img/5.png" class="well"></img>
-            <img src="img/6.png" class="well"></img>
-            <img src="img/7.png" class="well"></img>
+            <div id="myCarousel" class="carousel slide">
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item active"><img src="img/1.png" class="well"></img></div>
+                <div class="item"><img src="img/2.png" class="well"></img></div>
+                <div class="item"><img src="img/3.png" class="well"></img></div>
+                <div class="item"><img src="img/4.png" class="well"></img></div>
+                <div class="item"><img src="img/5.png" class="well"></img></div>
+                <div class="item"><img src="img/6.png" class="well"></img></div>
+                <div class="item"><img src="img/7.png" class="well"></img></div>
+              </div>
+              <!-- Carousel nav -->
+              <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
+            
             <div class="well">
               <div class="g-plusone"></div>
               <!-- Place this tag after the last +1 button tag. -->
@@ -82,6 +96,11 @@
       </div>
       
     </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <script src="/css/bootstrap/js/carousel.js"></script>
+    <script>
+      $(function(){ $('.carousel').carousel(); });
+    </script>
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
