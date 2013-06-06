@@ -23,11 +23,13 @@
     <div class="container">
       <div id="main" role="main">
         <div class="row">
-          <div class="col col-lg-7">
+          <div class="col col-lg-12">
             <h1>
-            <a href="/">A is for Array</a>
-            <small>An ABC Book for all ages</small>
-          </h1>
+              <a href="/">A is for Array</a>
+              <small>ABCs for future coders</small>
+            </h1>
+          </div>
+          <div class="col col-lg-6">
           
             <%= yield %>
             <h5>Available for Purchase on:</h5>
@@ -37,15 +39,15 @@
 
             <p><small>Have Questions, Comments, or Concerns? <a href="mailto:contact@aisforarray.com" data-source-code="Yes, it is bad to put my e-mail in plain text.  Thanks for caring about doing things right.  That will get you far.">Contact Brandon Hansen</a></small></p>
           </div>
-          <aside class="col col-lg-5">
+          <aside class="col col-offset-1 col-lg-5">
             <h3>Samples from the (revised) Book:</h3>
             <div id="samples">
-                <img src="img/2.png" alt="L is for Loop" />
-                <img src="img/3.png" alt="Loop Description" />
-                <img src="img/4.png" alt="S is for Singleton" />
-                <img src="img/5.png" alt="Singleton Description" />
-                <img src="img/6.png" alt="Z is for Z-Index" />
-                <img src="img/7.png" alt="Z-index Description" />
+              <img src="img/2.png" alt="L is for Loop" />
+              <img src="img/3.png" alt="Loop Description" />
+              <img src="img/4.png" alt="S is for Singleton" />
+              <img src="img/5.png" alt="Singleton Description" />
+              <img src="img/6.png" alt="Z is for Z-Index" />
+              <img src="img/7.png" alt="Z-index Description" />
             </div>
             <%= erb :social %>
           </aside>

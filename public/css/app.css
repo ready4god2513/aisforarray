@@ -4474,16 +4474,12 @@ a.list-group-item.active > .badge,
 #main strong {
   color: #5cb85c;
 }
-#main aside {
-  margin-top: 20px;
+#main small {
+  color: #5bc0de;
 }
 #main aside #samples {
   margin: 20px 0;
 }
-#main aside h4 {
-  color: #f0ad4e;
-}
-#main aside h4 small {
-  color: #555555;
-  display: block;
+#main aside h3 {
+  margin: 0 0 10px 0;
 }
