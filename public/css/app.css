@@ -4478,7 +4478,7 @@ a.list-group-item.active > .badge,
   margin-top: 20px;
 }
 #main aside #samples {
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 #main aside h4 {
   color: #f0ad4e;
