@@ -15,53 +15,39 @@
     <meta property="og:image" content="http://www.aisforarray.com/img/og_image_white.jpg" />
     <meta property="og:site_name" content="A is for Array"/>
     <meta property="fb:admins" content="1439910669"/>
-    <meta property="og:description" content="A is for Array is the Childrens's ABC book for programmers and their kids.  Full of colorful illustrations and real-life comparisons, this book is sure to captivate the imagination your programmers-to-be.  Purchase on Amazon http://goo.gl/4bLE3" />
+    <meta property="og:description" content="Now updated and revised!  A is for Array is the Childrens's ABC book for programmers and their kids.  Full of colorful illustrations and real-life comparisons, this book is sure to captivate the imagination your programmers-to-be.  Purchase on Amazon http://goo.gl/4bLE3" />
     <link rel="canonical" href="http://www.aisforarray.com" />
     <link rel="stylesheet" href="/css/app.css" />
   </head>
   <body>
     <div class="container">
-      <header>
-        <div class="col col-lg-12">
-          <h1>
-            <a href="/">A is for Array</a>
-            <small>A Novelty ABC Book</small>
-          </h1>
-        </div>
-      </header>
       <div id="main" role="main">
         <div class="row">
-          <div class="col col-lg-8">
+          <div class="col col-lg-7">
+            <h1>
+            <a href="/">A is for Array</a>
+            <small>An ABC Book for all ages</small>
+          </h1>
+          
             <%= yield %>
-            <div class="well">
-              <div class="row">
-                <h5 class="pull-left">Available for Purchase on:</h5>
-                <a href="http://goo.gl/4bLE3" class="pull-left">
-                  <img src="img/amazon.png" alt="Purchase A is for Array on Amazon" width="120" />
-                </a>
-                <div class="g-plusone"></div>
-                <script type="text/javascript">
-                (function() {
-                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                po.src = 'https://apis.google.com/js/plusone.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                })();
-                </script>
-                <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="codingwithmykids">Tweet</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/aisforarray" data-layout="button_count" data-send="false" data-width="120" data-show-faces="false"></div>
-              </div>
-            </div>
+            <h5>Available for Purchase on:</h5>
+            <a href="http://goo.gl/4bLE3">
+              <img src="img/amazon.png" alt="Purchase A is for Array on Amazon" width="120" />
+            </a>
+
             <p><small>Have Questions, Comments, or Concerns? <a href="mailto:contact@aisforarray.com" data-source-code="Yes, it is bad to put my e-mail in plain text.  Thanks for caring about doing things right.  That will get you far.">Contact Brandon Hansen</a></small></p>
           </div>
-          <aside class="col col-lg-4">
-            <h4>Samples from the Book</h4>
-            <img src="img/2.png" class="well" alt="L is for Loop" />
-            <img src="img/3.png" class="well" alt="Loop Description" />
-            <img src="img/4.png" class="well" alt="S is for Singleton" />
-            <img src="img/5.png" class="well" alt="Singleton Description" />
-            <img src="img/6.png" class="well" alt="Z is for Z-Index" />
-            <img src="img/7.png" class="well" alt="Z-index Description" />
+          <aside class="col col-lg-5">
+            <h3>Samples from the (revised) Book:</h3>
+            <div id="samples">
+                <img src="img/2.png" alt="L is for Loop" />
+                <img src="img/3.png" alt="Loop Description" />
+                <img src="img/4.png" alt="S is for Singleton" />
+                <img src="img/5.png" alt="Singleton Description" />
+                <img src="img/6.png" alt="Z is for Z-Index" />
+                <img src="img/7.png" alt="Z-index Description" />
+            </div>
+            <%= erb :social %>
           </aside>
         </div>
       </div>
@@ -83,5 +69,7 @@
     js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
     fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="/js/app-ck.js"></script>
   </body>
 </html>
