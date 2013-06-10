@@ -24,12 +24,15 @@
       <div id="main" role="main">
         <div class="row">
           <div class="col col-lg-12">
-            <h1>
-              <a href="/">A is for Array</a>
-              <small>ABCs for future coders</small>
-            </h1>
+            <div class="page-header">
+              <h1>
+                <a href="/">A is for Array</a>
+                <small>ABCs for future coders</small>
+              </h1>
+            </div>
           </div>
           <div class="col col-lg-6">
+            <%= erb :social %>
             <%= yield %>
             <% if Date.today >= Date.strptime('06/16/2013', '%m/%d/%Y') %>
               <h5>Available for Purchase on:</h5>
@@ -53,7 +56,6 @@
               <img src="/img/6.png" alt="Z is for Z-Index" />
               <img src="/img/7.png" alt="Z-index Description" />
             </div>
-            <%= erb :social %>
           </aside>
         </div>
       </div>
