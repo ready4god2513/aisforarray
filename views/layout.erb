@@ -31,13 +31,14 @@
           </div>
           <div class="col col-lg-6">
             <%= yield %>
-            <% if Date.today >= Date.strptime('06/15/2013', '%m/%d/%Y') %>
+            <% if Date.today >= Date.strptime('06/16/2013', '%m/%d/%Y') %>
               <h5>Available for Purchase on:</h5>
               <a href="http://goo.gl/4bLE3">
                 <img src="img/amazon.png" alt="Purchase A is for Array on Amazon" width="120" />
               </a>
             <% else %>
-              <h5><strong>Second edition available June 15, 2013.</strong></h5>
+              <h5><strong>Second edition available from Amazon June 16, 2013.</strong></h5>
+              <h5 class="alert alert-info">Available TODAY from <br /> <a href="https://www.createspace.com/4291303"><img src="/img/cs.jpg" alt="CreateSpace Logo"/></a></h5>
             <% end %>
 
             <p><small>Have Questions, Comments, or Concerns? <a href="mailto:contact@aisforarray.com" data-source-code="Yes, it is bad to put my e-mail in plain text.  Thanks for caring about doing things right.  That will get you far.">Contact Brandon Hansen</a></small></p>
@@ -45,12 +46,12 @@
           <aside class="col col-offset-1 col-lg-5">
             <h3>Samples from the (revised) Book:</h3>
             <div id="samples">
-              <img src="img/2.png" alt="L is for Loop" />
-              <img src="img/3.png" alt="Loop Description" />
-              <img src="img/4.png" alt="S is for Singleton" />
-              <img src="img/5.png" alt="Singleton Description" />
-              <img src="img/6.png" alt="Z is for Z-Index" />
-              <img src="img/7.png" alt="Z-index Description" />
+              <img src="/img/2.png" alt="L is for Loop" />
+              <img src="/img/3.png" alt="Loop Description" />
+              <img src="/img/4.png" alt="S is for Singleton" />
+              <img src="/img/5.png" alt="Singleton Description" />
+              <img src="/img/6.png" alt="Z is for Z-Index" />
+              <img src="/img/7.png" alt="Z-index Description" />
             </div>
             <%= erb :social %>
           </aside>
