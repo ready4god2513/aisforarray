@@ -32,20 +32,9 @@
             </div>
           </div>
           <div class="col col-lg-6">
-            <%= erb :social %>
             <%= yield %>
-            <% if Date.today >= Date.strptime('06/16/2013', '%m/%d/%Y') %>
-              <h5>Available for Purchase on:</h5>
-              <a href="http://goo.gl/4bLE3">
-                <img src="img/amazon.png" alt="Purchase A is for Array on Amazon" width="120" />
-              </a>
-            <% else %>
-              <h5><strong>Second edition available from Amazon June 16, 2013.</strong></h5>
-              <h5 class="alert alert-info">
-                Purchase now from <br />
-                <a href="https://www.createspace.com/4291303"><img src="/img/cs.jpg" alt="CreateSpace Logo" width="120" /></a>
-              </h5>
-            <% end %>
+            <%= erb :purchase %>
+            <%= erb :social %>
 
             <p><small>Have Questions, Comments, or Concerns? <a href="mailto:contact@aisforarray.com" data-source-code="Yes, it is bad to put my e-mail in plain text.  Thanks for caring about doing things right.  That will get you far.">Contact Brandon Hansen</a></small></p>
           </div>
