@@ -24,24 +24,20 @@
       <div id="main" role="main">
         <div class="row">
           <div class="col col-lg-12">
-            <div class="navbar navbar-fixed-top">
+            <div class="page-header">
               <h1>
                 <a href="/">A is for Array</a>
                 <small>ABCs for future coders</small>
               </h1>
             </div>
           </div>
-          <div class="col col-lg-6">
+          <div class="col col-lg-12">
             <%= yield %>
             <%= erb :purchase %>
             <%= erb :social %>
 
             <p><small>Have Questions, Comments, or Concerns? <a href="mailto:contact@aisforarray.com" data-source-code="Yes, it is bad to put my e-mail in plain text.  Thanks for caring about doing things right.  That will get you far.">Contact Brandon Hansen</a></small></p>
           </div>
-          <aside class="col col-offset-1 col-lg-5">
-            <p>Check it out before you buy:</p>
-            <a href="/book.html" class="btn btn-primary btn-large">Read the Book Online</a>
-          </aside>
         </div>
       </div>
       
